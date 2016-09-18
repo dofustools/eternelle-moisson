@@ -17,65 +17,6 @@
 		</div>
 
 		<div class="js-accordion" data-accordion-prefix-classes="animated-accordion">
-			<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1</h2>
-			<div class="js-accordion__panel">
-				<ul id="etape_1">
-				</ul>
-			</div>
-
-			<h2 class="js-accordion__header">Etape 2</h2>
-			<div class="js-accordion__panel">
-				<ul>
-					<li>
-						<input type="checkbox" name="souris_verte" id="souris_verte" />
-						<label for="souris_verte">Souris verte (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_mauve" id="souris_mauve" />
-						<label for="souris_mauve">Souris mauve (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_moche" id="souris_moche" />
-						<label for="souris_moche">Souris moche (Cryptes)</label>
-					</li>
-				</ul>
-			</div>
-
-			<h2 class="js-accordion__header">Etape 3</h2>
-			<div class="js-accordion__panel">
-				<ul>
-					<li>
-						<input type="checkbox" name="souris_grande" id="souris_grande" />
-						<label for="souris_grande">Souris grande (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_petite" id="souris_petite" />
-						<label for="souris_petite">Souris petite (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_visible" id="souris_visible" />
-						<label for="souris_visible">Souris visible (Cryptes)</label>
-					</li>
-				</ul>
-			</div>
-
-			<h2 class="js-accordion__header">Etape 4</h2>
-			<div class="js-accordion__panel">
-				<ul>
-					<li>
-						<input type="checkbox" name="souris_grille" id="souris_grille" />
-						<label for="souris_grille">Souris grille (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_fondu" id="souris_fondu" />
-						<label for="souris_fondu">Souris fondu (Cryptes)</label>
-					</li>
-					<li>
-						<input type="checkbox" name="souris_chaude" id="souris_chaude" />
-						<label for="souris_chaude">Souris chaude (Cryptes)</label>
-					</li>
-				</ul>
-			</div>
 		</div>
 	</div>
 
