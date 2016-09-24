@@ -16,6 +16,7 @@ $(document).ready(function(){
 		$('.js-accordion').append(
 			'<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1 </h2>'+
 			'<div class="js-accordion__panel">'+
+				'<h3>Votre progression :</h3>'+
 				'<div id="barre_etape_1"></div>'+
 				'<ul id="etape_1">'+
 				'</ul>'+
@@ -28,6 +29,7 @@ $(document).ready(function(){
 			$('.js-accordion').append(
 				'<h2 class="js-accordion__header">Etape'+counter+'</h2>'+
 				'<div class="js-accordion__panel">'+
+					'<h3>Votre progression :</h3>'+
 					'<div id="barre_etape_'+counter+'"></div>'+
 					'<ul id="etape_'+counter+'">'+
 					'</ul>' +

@@ -1,24 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body{
+	background-color: #313840;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+}
+ul {
+	padding: 0px 40px;
+}
+li {
+	list-style-type: none; 
+    margin: 25px 0px;
+}
 .content {
 	max-width: 900px;
 	margin: auto;
+    margin-top: 50px;
+	background-color: #4a575f;
+    padding: 50px;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid #525c67;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+h1 {
+	margin-top:0px;
+}
+h3 {
+    margin-bottom: 10px;
+    padding: 0px 40px;
 }
 
 /* Accordion */
 	.animated-accordion__header {
 		width: 100%;
 		text-align: left;
-		border: 1px solid black;
+	    border: 1px solid rgba(0, 3, 6, 0.3);
 		padding: 20px;
 		margin: 10px 0px;
+		background: rgba(0, 0, 0, 0.3);
+		color: white;
+		border-radius: 10px;
 	}
 	.animated-accordion__header[aria-expanded="true"] {	
 		border-bottom: 0px;
-		background: white;
 		margin-bottom: 0px;
+    	color: white;
+    	background: rgba(0, 0, 0, 0.3);
+		border-radius: 10px 10px 0px 0px;
 	}
 	.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
-		border: 1px solid black;
+	    border: 1px solid rgba(0, 3, 6, 0.3);
 		border-top: 0px;
+		background: rgba(0, 0, 0, 0.3);
 	}
 	.animated-accordion__title {
 		border: 0;
@@ -42,6 +76,7 @@
 			 transition-delay: 0s;
 			 margin: 0;
 			 padding: 0;
+			 border-radius: 0px 0px 10px 10px;
 		}
 		/* This is the hidden state */
 		[aria-hidden=true].animated-accordion__panel {
@@ -53,3 +88,75 @@
 			 margin: 0;
 			 padding: 0;
 		}
+
+	/* progressBar */
+		.ui-widget.ui-widget-content {
+		    border: 1px solid rgba(0, 0, 0, 0.3);
+		    background: #343d42;
+		    border-radius: 30em;
+		}
+		.ui-progressbar .ui-progressbar-value {
+			background: #00ab64;
+		    border-radius: 30em;
+		}
+		.ui-widget-header {
+		    border: 1px solid #5bbf95;
+		}
+
+
+
+/* Cachons la case à cocher */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+ 
+/* on prépare le label */
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+	display: block;
+  position: relative; /* permet de positionner les pseudo-éléments */
+  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
+  cursor: pointer;    /* affiche un curseur adapté */
+}
+
+/* Aspect des checkboxes */
+/* :before sert à créer la case à cocher */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 1px;
+  width: 17px; height: 17px; /* dim. de la case */
+  border: 1px solid #aaa;
+  border-radius: 3px; /* angles arrondis */
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.3) /* légère ombre interne */
+}
+[type="checkbox"]:not(:checked) + label:before {
+	background: #4a575f;
+}
+[type="checkbox"]:checked + label:before {
+	background: #232a2d;
+}
+
+/* Aspect général de la coche */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '\2714';
+  position: absolute;
+  top: 0; left: 4px;
+  font-size: 14px;
+  color: white;
+  transition: all .2s; /* on prévoit une animation */
+}
+/* Aspect si "pas cochée" */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0; /* coche invisible */
+  transform: scale(0); /* mise à l'échelle à 0 */
+}
+/* Aspect si "cochée" */
+[type="checkbox"]:checked + label:after {
+  opacity: 1; /* coche opaque */
+  transform: scale(1); /* mise à l'échelle 1:1 */
+}
