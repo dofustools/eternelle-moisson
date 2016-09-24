@@ -2,10 +2,10 @@ $(document).ready(function(){
 
 	function etape_check(monstresId, monstresInfo, numEtape) {
 		for (var i = 0, c = monstresId.length; i < c; i++) {
-		    $('#etape_' + numEtape).append( 
+		    $('#etape_'+numEtape).append( 
 		    	'<li>'
-		    		+ '<input type="checkbox" name="' + monstresId[i] + '" id="' + monstresId[i] + '" />'
-	    	 		+ '<label for="' + monstresId[i] + '">' + monstresInfo[i] + '</label>' +
+		    		+'<input type="checkbox" name="'+monstresId[i]+'" id="'+monstresId[i]+'" />'
+	    	 		+'<label for="'+monstresId[i]+'">'+monstresInfo[i]+'</label>'+
     	 		'</li>' 
 	 		);
 		}	
@@ -14,10 +14,11 @@ $(document).ready(function(){
 
 	function blocAccordion(nbEtapes) {
 		$('.js-accordion').append(
-			'<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1 </h2>' +
+			'<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1 </h2>'+
 			'<div class="js-accordion__panel">'+
-				'<ul id="etape_1">' +
-				'</ul>' +
+				'<div id="barre_etape_1"></div>'+
+				'<ul id="etape_1">'+
+				'</ul>'+
 			'</div>'
 		)
 
@@ -25,9 +26,10 @@ $(document).ready(function(){
 		while (c <= nbEtapes) {
 			var counter = c++;
 			$('.js-accordion').append(
-				'<h2 class="js-accordion__header">Etape' + counter + '</h2>' +
+				'<h2 class="js-accordion__header">Etape'+counter+'</h2>'+
 				'<div class="js-accordion__panel">'+
-					'<ul id="etape_' + counter +'">' +
+					'<div id="barre_etape_'+counter+'"></div>'+
+					'<ul id="etape_'+counter+'">'+
 					'</ul>' +
 				'</div>'
 			)
@@ -138,6 +140,19 @@ $(document).ready(function(){
 		}
 	});
 
+	function progressBarEtape() {
+		var co = 1;
+		while (co <= 35) {
+			var counter = co++;
+			var valeur = 0;
+		  	var valeurTotal = 100;
+		  	valeur = $('#etape_'+counter+' '+'input:checked').length * valeurTotal / $('#etape_'+counter+' '+'input').length;
+			$('#barre_etape_'+counter).progressbar({
+				value: valeur
+			});
+		}		
+	}
+	setInterval(progressBarEtape, 1000);
 });
 
 

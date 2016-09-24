@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Dofus - Quète éternelle moisson</title>
 
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="style.min.css">
 
 	</head>
@@ -22,6 +23,7 @@
 
 		<!-- Script -->
 			<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 			<script src="script.js"></script>
 			<script src="module/jquery-accessible-accordion-aria/jquery-accessible-accordion-aria.js"></script>
 		<!--  -->
