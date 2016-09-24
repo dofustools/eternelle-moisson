@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 
 
-	function createCookie(name,value,days) {
+/*	function createCookie(name,value,days) {
 		if (days) {
 			var date = new Date();
 			date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -128,15 +128,46 @@ $(document).ready(function(){
 
 	function eraseCookie(name) {
 		createCookie(name,"",-1);
+	}*/
+
+	//cleanArray removes all duplicated elements
+	function cleanArray(array) {
+	  var i, j, len = array.length, out = [], obj = {};
+	  for (i = 0; i < len; i++) {
+	    obj[array[i]] = 0;
+	  }
+	  for (j in obj) {
+	    out.push(j);
+	  }
+	  return out;
 	}
 
 	var checkedArray = [];
 	jQuery('input[type="checkbox"]').click(function() {
-		var valueCheck = jQuery(this).attr('id')
-		checkedArray.push(valueCheck);
+		var valueCheck = jQuery(this).attr('id');
+		if (jQuery(this).prop("checked") == true) {
+			checkedArray.push(valueCheck);
+			checkedArray = cleanArray(checkedArray);
+			localStorage.setItem('checkbox', checkedArray)	
+		} else {
+			for(var i = checkedArray.length - 1; i >= 0; i--) {
+			    if(checkedArray[i] === valueCheck) {
+			       checkedArray.splice(i, 1);
+			    }
+			}
+			localStorage.setItem('checkbox', checkedArray)
+			console.log(checkedArray);
+		}
 	});
-		createCookie('ppkcookie','testcookie',7);
-		console.log(document.cookie);
+
+	if (localStorage.getItem('checkbox') != null) {
+		var valCheck = localStorage.getItem('checkbox').split(",");
+
+		for (var i = 0, c = valCheck.length; i < c; i++) {
+			jQuery("#"+valCheck[i]).prop("checked", true);
+		}		
+	}
+
 });
 
 
