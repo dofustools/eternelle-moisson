@@ -9,6 +9,7 @@ $(document).ready(function(){
     	 		'</li>' 
 	 		);
 		}	
+
 	}
 
 	function blocAccordion(nbEtapes) {
@@ -32,11 +33,6 @@ $(document).ready(function(){
 			)
 		}
 	}
-
-
-    $("input:checked").change(function() {
-	  console.log($(this).attr('id'));   
-	});
 
 	blocAccordion(35);
 
@@ -105,4 +101,42 @@ $(document).ready(function(){
 						'Gobelin ([4, -12], Campement des Bworks, Village dévasté de Gisgoul)'];
 
 	etape_check(Etape_2_id, Etape_2_info, '2');
+
+
+
+	function createCookie(name,value,days) {
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime()+(days*24*60*60*1000));
+			var expires = "; expires="+date.toGMTString();
+		}
+
+		else var expires = "";
+		document.cookie = name+"="+value+expires+"; path=/";
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0;i < ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	}
+
+	function eraseCookie(name) {
+		createCookie(name,"",-1);
+	}
+
+	var checkedArray = [];
+	jQuery('input[type="checkbox"]').click(function() {
+		var valueCheck = jQuery(this).attr('id')
+		checkedArray.push(valueCheck);
+	});
+		createCookie('ppkcookie','testcookie',7);
+		console.log(document.cookie);
 });
+
+
