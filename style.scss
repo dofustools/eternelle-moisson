@@ -54,6 +54,25 @@ h3 {
 		border-top: 0px;
 		background: rgba(0, 0, 0, 0.3);
 	}
+	/* $('.animated-accordion__header[aria-expanded="true"]').css({
+	'color': 'black',
+	'background': 'rgb(255, 196, 69)',
+	'border': '2px solid rgba(255, 255, 255, 0.3)',
+	'border-bottom': '0px'
+	});
+	$('.animated-accordion__header[aria-expanded="true"]+.animated-accordion__panel').css({
+	'background': '#ffc445',
+	'background': '-moz-linear-gradient(top, #ffc445 0%, #f38118 100%)',
+	'background': '-webkit-linear-gradient(top, #ffc445 0%,#f38118 100%)', 
+	'background': 'linear-gradient(to bottom, #ffc445 0%,#f38118 100%)', 
+	'filter': "progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc445', endColorstr='#f38118',GradientType=0 )",
+	'color': '#000000',
+	'border': '2px solid rgba(255, 255, 255, 0.3)',
+	'border-top': '0px',
+	'-webkit-transition': 'background 5s ease',
+	'transition': 'background 5s ease'
+	}); */
+
 	.animated-accordion__title {
 		border: 0;
 	    clip: rect(0 0 0 0);
@@ -96,11 +115,11 @@ h3 {
 		    border-radius: 30em;
 		}
 		.ui-progressbar .ui-progressbar-value {
-			background: #00ab64;
+			background: #91ba42;
 		    border-radius: 30em;
 		}
 		.ui-widget-header {
-		    border: 1px solid #5bbf95;
+		    border: 1px solid #b7e263;
 		}
 
 

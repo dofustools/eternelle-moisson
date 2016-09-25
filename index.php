@@ -17,6 +17,9 @@
 			<p>L'éternelle moisson est la quête permettant d'obtenir le Dofus Ocre, elle se lance auprès d'Otomaï qui se trouve dans le Tronc de l'arbre Hakam en [-55,15] (vous pouvez consultez le chemin vers Otomaï). Pour lancer la quête vous devrez avoir atteint le niveau 40 minimum et il vous faudra avoir effectué le donjon des Bulbes afin d'avoir le sort capture d’âmes.</p>	
 		</div>
 
+		<h3 class="title_progressBar">Progression global :</h3>
+		<div id="barre_etape_all"></div>
+
 		<div class="js-accordion" data-accordion-prefix-classes="animated-accordion">
 		</div>
 	</div>

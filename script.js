@@ -16,7 +16,7 @@ $(document).ready(function(){
 		$('.js-accordion').append(
 			'<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1 </h2>'+
 			'<div class="js-accordion__panel">'+
-				'<h3>Votre progression :</h3>'+
+				'<h3 class="title_progressBar_1">Progression :</h3>'+
 				'<div id="barre_etape_1"></div>'+
 				'<ul id="etape_1">'+
 				'</ul>'+
@@ -29,7 +29,7 @@ $(document).ready(function(){
 			$('.js-accordion').append(
 				'<h2 class="js-accordion__header">Etape'+counter+'</h2>'+
 				'<div class="js-accordion__panel">'+
-					'<h3>Votre progression :</h3>'+
+					'<h3 class="title_progressBar_'+counter+'">Progression :</h3>'+
 					'<div id="barre_etape_'+counter+'"></div>'+
 					'<ul id="etape_'+counter+'">'+
 					'</ul>' +
@@ -152,9 +152,27 @@ $(document).ready(function(){
 			$('#barre_etape_'+counter).progressbar({
 				value: valeur
 			});
-		}		
+			$('.title_progressBar_'+counter+' span').remove();
+			$('.title_progressBar_'+counter).append('<span> '+Math.round(valeur)+'%</span>');				
+		}
 	}
+	function progressBarAllEtape() {
+		var co = 1;
+		while (co <= 35) {
+			var counter = co++;
+			var valeur = 0;
+		  	var valeurTotal = 100;
+		  	valeur = $('input:checked').length * valeurTotal / $('input').length;
+			$('#barre_etape_all').progressbar({
+				value: valeur
+			});
+			$('.title_progressBar span').remove();
+			$('.title_progressBar').append('<span> '+Math.round(valeur)+'%</span>');
+		}	
+	}
+
 	setInterval(progressBarEtape, 1000);
+	setInterval(progressBarAllEtape, 1000);
 });
 
 
