@@ -32,7 +32,6 @@ $(document).ready(function(){
 			$('.title_progressBar_'+counter).append('<span> '+Math.round(valeur)+'%</span>');	
 
 			if (Math.round(valeur) == 100) {
-				console.log($('#accordion1_tab'+counter));
 				$('#accordion1_tab'+counter).addClass('validated');
 				$('#accordion1_panel'+counter).addClass('validated');
 			} else {

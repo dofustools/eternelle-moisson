@@ -9,10 +9,12 @@
 
 	</head>
 	<body>
-		<header>
-			<h1>DofusTools</h1>
-			<h2>L'éternelle moisson</h2>
-			<nav>
+		<header class="header">
+			<div class="header_logo">
+				<h1>DofusTools</h1>
+				<h2>L'éternelle moisson</h2>	
+			</div>
+			<nav class="header_nav">
 				<ul>
 					<li>Accueil</li>
 					<li>Devblog</li>
@@ -22,7 +24,7 @@
 		</header>
 
 		<div class="content">	
-			<section>
+			<section class="content_intro">
 				<article>
 					<h1>L'ÉTERNELLE MOISSON</h1>
 					<h2>Préambule</h2>
@@ -30,13 +32,15 @@
 				</article>		
 			</section>
 
-			<aside></aside>
+			<aside class="content_filtre"></aside>
 
-			<section>
-				<h3 class="title_progressBar">Progression global :</h3>
-				<div id="barre_etape_all"></div>
+			<section class="content_main">
+				<aside class="content_main-stats">
+					<h3 class="title_progressBar">Progression global :</h3>
+					<div id="barre_etape_all"></div>	
+				</aside>
 
-				<div class="js-accordion" data-accordion-prefix-classes="animated-accordion">
+				<div class="content_main-accordion js-accordion" data-accordion-prefix-classes="animated-accordion">
 				</div>
 			</section>
 		</div>
