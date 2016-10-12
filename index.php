@@ -6,13 +6,11 @@
 
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="style.min.css">
-
 	</head>
 	<body>
 		<header class="header">
 			<div class="header_logo">
-				<h1>DofusTools</h1>
-				<h2>L'éternelle moisson</h2>	
+				<h1>DOFUS<span>TOOLS</span></h1>
 			</div>
 			<nav class="header_nav">
 				<ul>
@@ -46,7 +44,12 @@
 		</div>
 
 
-		<footer></footer>
+		<footer class="footer">
+			<ul>
+				<li>Crédit</li>
+				<li>Licence</li>
+			</ul>
+		</footer>
 
 		<!-- Script -->
 			<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
