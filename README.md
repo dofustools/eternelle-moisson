@@ -1,6 +1,11 @@
-#Projet
+## Synopsis
 
----
+Ce site est un outils de gestion pour la quête Dofus de l’Éternelle moisson. Son but est de facilité la prise de note et la visualisation de sa progression dans cette quête longue et fastidieuse.
 
-Cet outil est basé sur l'utilisation de cookie pour sauvegarder l'état de complétion de la quête.
-L'outil est voué à évoluer.
+## License
+
+L'outil est disponible sous licence Creative Commons.
+
+## Credit
+
+Le système d'accordéon est un plug-in jQuery (https://github.com/nico3333fr/jquery-accessible-accordion-aria), réalisé par Nicolas Hoffmann (https://www.nicolas-hoffmann.net).
