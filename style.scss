@@ -202,7 +202,7 @@
 			margin: 10px 0px;
 		}
 		.animated-accordion__header[aria-expanded="true"] {	
-			border-bottom: 0px;
+			/* border-bottom: 0px; */
 			margin-bottom: 0px;
 		}
 		.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
@@ -215,10 +215,10 @@
 
 		/* Etape validé */
 			.animated-accordion__header.validated,
-			.animated-accordion__header.validated[aria-expanded="true"],
-			.animated-accordion__header[aria-expanded="true"]+.animated-accordion__panel.validated {
-				background: $dark-20;
-				color: white;		
+			.animated-accordion__header.validated[aria-expanded="true"] {
+				background: $color-green;
+				color: white;	
+			    text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;	
 			}
 			.animated-accordion__header.validated[aria-expanded="true"] {
 				border-bottom: 0px;

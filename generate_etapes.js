@@ -33,7 +33,7 @@ $(document).ready(function(){
 		while (c <= nbEtapes) {
 			var counter = c++;
 			$('.js-accordion').append(
-				'<h2 class="js-accordion__header">Etape'+counter+'</h2>'+
+				'<h2 class="js-accordion__header">Etape '+counter+'</h2>'+
 				'<div class="js-accordion__panel">'+
 					'<h3 class="title_progressBar_'+counter+'">Progression :</h3>'+
 					'<div id="barre_etape_'+counter+'"></div>'+
