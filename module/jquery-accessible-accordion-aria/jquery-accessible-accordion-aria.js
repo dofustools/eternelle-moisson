@@ -19,7 +19,7 @@ $(document).ready(function(){
                     
                 $this.attr({
                       "role": "tablist",
-                      "aria-multiselectable": "true",
+                      "aria-multiselectable": "false",
                       "class": $accordions_prefix_classes
                 });
                 

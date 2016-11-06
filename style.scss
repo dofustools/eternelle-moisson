@@ -47,9 +47,21 @@
    Variable
    ========================================================================== */
    	$color-primary: #ff9f0b;
+   	$color-primary-second: #FFA519;
+   	$color-comp: #0063B2;
+   	$color-comp-second: #008DFF;
+   	$color-green: #8BC34A;
+   	$color-green-dark: #6F9C3B;
+   	$dark-10: #130b09;
+   	$dark-20: #4e4332;
+   	$dark-30: #9a8667;
+   	$light-grey: #f2F5F7;
+
    	$grey-10: #fbfbfb;
    	$grey-80: #484848;
    	$grey-90: #191919;
+
+
 
 
 /* ==========================================================================
@@ -61,11 +73,14 @@
 	html {
 	    font-family: 'Lato', sans-serif;
 	}
+	html, body {
+		background: $light-grey;
+	}
 	h1,h2,h3,h4,h5,h6,p {
 		line-height: 150%;
 	}
 
-	@import 'https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Lato|Roboto';
+	@import 'https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Lato|Roboto|Slabo+27px';
 
 
 /* ==========================================================================
@@ -75,8 +90,8 @@
    	   ========================================================================== */
    	   	.header {
    	   		display: flex;
-   	   		padding: 10px 2%;
-   		    background: $grey-10;
+   	   		padding: 10px 20%;
+   		    background: $dark-10;
    	   	}
    	   	.header_logo,
    	   	.header_nav {
@@ -88,7 +103,7 @@
 
    	   	.header_logo {
    	   		font-family: 'Roboto', sans-serif;
-   		    color: #484848;
+   		    color: white;
    	   	}
    	   	.header_logo h1 {
    		    font-weight: 300;
@@ -97,7 +112,7 @@
    	   	}
    	   	.header_logo h1 span {
    	   		font-weight: 700;
-   	   		color: $color-primary;
+   	   		color: white;
    	   	}
 
    	/* Content
@@ -107,16 +122,19 @@
     		flex-wrap: wrap;
    	   	}
    	   	.content_intro {
-   	   		padding: 25px 20%;
-			background: $grey-80;
+			background: url(sources/bg.jpg) center -110px $grey-80;
 			color: white;
+   	   	}
+   	   	.content_intro article {
+   		    background: rgba(0, 0, 0, 0.6);
+   	   		padding: 75px 20%;
    	   	}
    	   	.content_intro h1 {
 			text-align: center;
 			font-size: 1.8rem;
 			margin-bottom: 20px;
 			letter-spacing: 2px;
-			font-family: 'Patrick Hand SC', cursive;
+			font-family: 'Slabo 27px', cursive;
    	   	}
    	   	.content_intro h2 {
    	   		font-size: 1.4rem;
@@ -126,10 +144,12 @@
 
    	   	.content_filtre {
    	   		flex: 1;
+   	   		display: none;
    	   	}
 
    	   	.content_main {
    	   		flex: 4;
+   	   		padding: 0px 20%;
    	   	}
    	   	.content_main-stats {
    	   		padding: 35px 0px;
@@ -138,7 +158,7 @@
    	/* Footer
    	   ========================================================================== */
    	   	.footer {
-   	   		background: $grey-80;
+   	   		background: $dark-10;
    	   		margin-top: 25px;
    	   	}
    	   	.footer ul {
@@ -148,48 +168,62 @@
    	   	.footer li {
    	   		display: inline-block;
    	   	}
+   	   	.footer,
+   	   	.footer a {
+   	   		color: white;
+   	   	}
 
 /* ==========================================================================
    Module
    ========================================================================== */
    	/* Accordeon
    	   ========================================================================== */
+   	   	.animated-accordion__header {
+			font-size: 1.4rem;	
+   	   	}
+   	   	.animated-accordion h3 {
+			font-size: 1.2rem;	
+   	   	}
+
+   	   	.animated-accordion__header,
+   	   	.animated-accordion__header[aria-expanded="true"],
+   	   	.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
+			background: white;
+			color: $dark-10;  	   		
+   	   	}
+   	   	.animated-accordion__header,
+   	   	.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
+		    border: 1px solid $dark-30;
+			padding: 20px;
+   	   	}
 		.animated-accordion__header {
 			width: 100%;
 			text-align: left;
-		    border: 1px solid rgba(0, 3, 6, 0.3);
-			padding: 20px;
-			background: rgba(0, 0, 0, 0.3);
-			color: white;
+			margin: 10px 0px;
 		}
 		.animated-accordion__header[aria-expanded="true"] {	
 			border-bottom: 0px;
 			margin-bottom: 0px;
-	    	color: white;
-	    	background: rgba(0, 0, 0, 0.3);
 		}
 		.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
-		    border: 1px solid rgba(0, 3, 6, 0.3);
 			border-top: 0px;
-			background: rgba(0, 0, 0, 0.3);
+			margin-bottom: 10px;
+		}
+		.animated-accordion__header[aria-expanded="true"]+.animated-accordion__panel ul {
+			margin-top: 25px;
 		}
 
 		/* Etape validé */
 			.animated-accordion__header.validated,
-			.animated-accordion__header.validated[aria-expanded="true"]  {
-				color: white;
-				text-shadow: 0px 0px 5px black;
-				background: #97A800;
-				border: 2px solid rgba(255, 255, 255, 0.3);	
+			.animated-accordion__header.validated[aria-expanded="true"],
+			.animated-accordion__header[aria-expanded="true"]+.animated-accordion__panel.validated {
+				background: $dark-20;
+				color: white;		
 			}
 			.animated-accordion__header.validated[aria-expanded="true"] {
 				border-bottom: 0px;
 			}
 			.animated-accordion__header[aria-expanded="true"]+.animated-accordion__panel.validated {
-				background: #97A800;
-				color: white;
-				text-shadow: 0px 0px 5px black;
-				border: 2px solid rgba(255, 255, 255, 0.3);
 				border-top: 0px;
 			}
 
@@ -217,6 +251,12 @@
 				 margin: 0;
 				 padding: 0;
 			}
+			.animated-accordion__panel ul {
+				margin-top: 10px;
+			}
+			.animated-accordion__panel li {
+				margin: 10px 0px;
+			}
 			/* This is the hidden state */
 			[aria-hidden=true].animated-accordion__panel {
 				 display: block;
@@ -231,16 +271,18 @@
 	/* ProgressBar
 	   ========================================================================== */
 		.ui-widget.ui-widget-content {
-		    border: 1px solid rgba(0, 0, 0, 0.3);
-		    background: #343d42;
+		    border: 1px solid $color-primary;
+		    background: white;
 		    border-radius: 30em;
+		    margin: 5px 0px;
 		}
 		.ui-progressbar .ui-progressbar-value {
-			background: #91ba42;
+			background: $color-primary-second;
 		    border-radius: 30em;
+		    margin: 0px;
 		}
 		.ui-widget-header {
-		    border: 1px solid #b7e263;
+		    border: 1px solid $color-primary;
 		}
 
 	/* Checkbox
@@ -269,15 +311,15 @@
 		  position: absolute;
 		  left:0; top: 1px;
 		  width: 17px; height: 17px; /* dim. de la case */
-		  border: 1px solid #aaa;
+		  border: 1px solid $color-primary;
 		  border-radius: 3px; /* angles arrondis */
 		  box-shadow: inset 0 1px 3px rgba(0,0,0,.3) /* légère ombre interne */
 		}
 		[type="checkbox"]:not(:checked) + label:before {
-			background: #4a575f;
+			background: white;
 		}
 		[type="checkbox"]:checked + label:before {
-			background: #232a2d;
+			background: $color-primary-second;
 		}
 
 		/* Aspect général de la coche */

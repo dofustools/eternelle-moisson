@@ -46,8 +46,8 @@
 
 		<footer class="footer">
 			<ul>
-				<li>Crédit</li>
-				<li>Licence</li>
+				<li><a href="#">Mentions légales</a> <span>|</span></li>
+				<li><a href="#">Licence</a></li>
 			</ul>
 		</footer>
 
