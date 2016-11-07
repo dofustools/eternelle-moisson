@@ -83,14 +83,14 @@ $(document).ready(function(){
 		if (jQuery(this).prop("checked") == true) {
 			checkedArray.push(valueCheck);
 			checkedArray = cleanArray(checkedArray);
-			localStorage.setItem('checkbox', checkedArray)	
+			localStorage.setItem('checkbox', checkedArray);
 		} else {
 			for(var i = checkedArray.length - 1; i >= 0; i--) {
 			    if(checkedArray[i] === valueCheck) {
 			       checkedArray.splice(i, 1);
 			    }
 			}
-			localStorage.setItem('checkbox', checkedArray)
+			localStorage.setItem('checkbox', checkedArray);
 		}
 
 		/* Calcule la valeur des progress bar */

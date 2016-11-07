@@ -1,0 +1,39 @@
+{
+  "title": "jQuery Accessible Accordion system, using ARIA",
+  "name": "jquery-accessible-accordion-aria",
+  "main": "jquery-accessible-accordion-aria.js",
+  "description": "This jQuery plugin will provide you an accessible Accordion System, using ARIA",
+  "author": [
+    {
+      "name": "Nicolas Hoffmann",
+      "email": "dante3333@gmail.com",
+      "web": "http://www.nicolas-hoffmann.net/"
+    }
+  ],
+  "homepage": "http://a11y.nicolas-hoffmann.net/accordion/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nico3333fr/jquery-accessible-accordion-aria.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "Accessibility",
+    "ARIA",
+    "accordion",
+    "a11y",
+    "jQuery Plugin"
+  ],
+  "dependencies": {
+    "jquery": ">=1.0.0"
+  },
+  "devDependencies": {},
+  "_release": "e8bd82038d",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e8bd82038df3fb75e843a02f7575d444825c69eb"
+  },
+  "_source": "https://github.com/nico3333fr/jquery-accessible-accordion-aria.git",
+  "_target": "*",
+  "_originalSource": "jquery-accessible-accordion-aria"
+}

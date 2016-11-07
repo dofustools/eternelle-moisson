@@ -1,0 +1,8 @@
+{
+    "name": "dofustools",
+    "dependencies": {
+        "jquery": "latest",
+        "jquery-ui": "latest",
+        "jquery-accessible-accordion-aria": "latest"
+    }
+}

@@ -8,6 +8,13 @@ Cet outil est destiné à la gestion de la quête Dofus de l’Éternelle moisso
 De nombreuses évolutions sont à venir (système de recherche, philtre, ...).
 
 
+## Evolutions à venir
+------------
+- Installation de Bower (pour régler les problèmes de dépendance).
+- Possibilité de selectionner tout les éléments d'une étape en un seul clic.
+- Mise en place d'un champ recherche et de philtre.
+
+
 ## Credit
 -----------
 Le système d'accordéon est un plug-in jQuery (<https://github.com/nico3333fr/jquery-accessible-accordion-aria>), réalisé par Nicolas Hoffmann (<https://www.nicolas-hoffmann.net>).
