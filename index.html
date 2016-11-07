@@ -2,17 +2,18 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8">
-		<title>Dofus - Quète éternelle moisson</title>
+		<title>Quète de l'éternelle moisson | DofusTools</title>
+		<meta name="description" content="Outil de gestion pour la quête Dofus de l’Éternelle moisson." />
 
 		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 		<link rel="stylesheet" href="style.min.css">
 	</head>
 	<body>
-		<header class="header">
+		<header class="header" role="banner">
 			<div class="header_logo">
 				<h1>DOFUS<span>TOOLS</span></h1>
 			</div>
-			<nav class="header_nav">
+			<nav class="header_nav" role="navigation" aria-hidden="true">
 				<ul>
 					<li>Accueil</li>
 					<li>Devblog</li>
@@ -21,7 +22,7 @@
 			</nav>
 		</header>
 
-		<div class="content">	
+		<div class="content" role="main">	
 			<section class="content_intro">
 				<article>
 					<h1>L'ÉTERNELLE MOISSON</h1>
@@ -35,7 +36,7 @@
 			<section class="content_main">
 				<aside class="content_main-stats">
 					<h3 class="title_progressBar">Progression global :</h3>
-					<div id="barre_etape_all"></div>	
+					<div id="barre_etape_all" aria-hidden="true"></div>	
 				</aside>
 
 				<div class="content_main-accordion js-accordion" data-accordion-prefix-classes="animated-accordion">
@@ -44,7 +45,7 @@
 		</div>
 
 
-		<footer class="footer">
+		<footer class="footer" role="contentinfo">
 			<ul>
 				<li><a href="#">Mentions légales</a> <span>|</span></li>
 				<li><a href="#">Licence</a></li>
