@@ -28,8 +28,8 @@ $(document).ready(function(){
 			$('#barre_etape_'+counter).progressbar({
 				value: valeur
 			});
-			$('.title_progressBar_'+counter+' span').remove();
-			$('.title_progressBar_'+counter).append('<span> '+Math.round(valeur)+'%</span>');	
+			$('#accordion1_tab'+counter+' span').remove();
+			$('#accordion1_tab'+counter).append('<span><span class="pc">'+Math.round(valeur)+'%</span> <span class="nb">'+$('#etape_'+counter+' '+'input:checked').length+' sur '+$('#etape_'+counter+' '+'input').length+'</span></span>');
 
 			if (Math.round(valeur) == 100) {
 				$('#accordion1_tab'+counter).addClass('validated');
@@ -55,7 +55,7 @@ $(document).ready(function(){
 				value: valeur
 			});
 			$('.title_progressBar span').remove();
-			$('.title_progressBar').append('<span> '+Math.round(valeur)+'%</span>');
+			$('.title_progressBar').append('<span><span class="pc">'+Math.round(valeur)+'%</span><span class="nb">'+$('input:checked').length+' sur '+$('input[type="checkbox"]').length+'</span></span>');
 		}	
 	}
 

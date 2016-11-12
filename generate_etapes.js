@@ -19,28 +19,15 @@ $(document).ready(function(){
 	 * Créer autant de bloc accordion qu'il y a d'étape
 	 */
 	function blocAccordion(nbEtapes) {
-		$('.js-accordion').append(
-			'<h2 class="js-accordion__header" data-accordion-opened="true">Etape 1 </h2>'+
-			'<div class="js-accordion__panel">'+
-				'<h3 class="title_progressBar_1">Progression :</h3>'+
-				'<div id="barre_etape_1" aria-hidden="true"></div>'+
-				'<ul id="etape_1">'+
-				'</ul>'+
-			'</div>'
-		)
-
-		var c = 2;
-		while (c <= nbEtapes) {
-			var counter = c++;
+		for (var i = 1, c = nbEtapes; i < c; i++) {
 			$('.js-accordion').append(
-				'<h2 class="js-accordion__header">Etape '+counter+'</h2>'+
+				'<h2 class="js-accordion__header">Etape '+i+'</h2>'+
 				'<div class="js-accordion__panel">'+
-					'<h3 class="title_progressBar_'+counter+'">Progression :</h3>'+
-					'<div id="barre_etape_'+counter+'" aria-hidden="true"></div>'+
-					'<ul id="etape_'+counter+'">'+
+					'<div id="barre_etape_'+i+'" aria-hidden="true"></div>'+
+					'<ul id="etape_'+i+'">'+
 					'</ul>' +
 				'</div>'
-			)
+			)	
 		}
 	}
 
