@@ -749,7 +749,7 @@ $(document).ready(function(){
 		Etape_35_id.push('etape_35_id'+[i]);
 	}
 
-	blocAccordion(35);
+	blocAccordion(36);
 	etape_check(Etape_1_id, Etape_1_info, '1');
 	etape_check(Etape_2_id, Etape_2_info, '2');
 	etape_check(Etape_3_id, Etape_3_info, '3');

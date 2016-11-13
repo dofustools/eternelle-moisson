@@ -24,19 +24,19 @@ $(document).ready(function(){
 			var counter = co++;
 			var valeur = 0;
 
-		  	valeur = $('#etape_'+counter+' '+'input:checked').length * 100 / $('#etape_'+counter+' '+'input').length;
-			$('#barre_etape_'+counter).progressbar({
+		  	valeur = jQuery('#etape_'+counter+' '+'input:checked').length * 100 / jQuery('#etape_'+counter+' '+'input[type="checkbox"]').length;
+			jQuery('#barre_etape_'+counter).progressbar({
 				value: valeur
 			});
-			$('#accordion1_tab'+counter+' span').remove();
-			$('#accordion1_tab'+counter).append('<span><span class="pc">'+Math.round(valeur)+'%</span> <span class="nb">'+$('#etape_'+counter+' '+'input:checked').length+' sur '+$('#etape_'+counter+' '+'input').length+'</span></span>');
+			jQuery('#accordion1_tab'+counter+' span').remove();
+			jQuery('#accordion1_tab'+counter).append('<span><span class="pc">'+Math.round(valeur)+'%</span> <span class="nb">'+jQuery('#etape_'+counter+' '+'input:checked').length+' sur '+jQuery('#etape_'+counter+' '+'input[type="checkbox"]').length+'</span></span>');
 
 			if (Math.round(valeur) == 100) {
-				$('#accordion1_tab'+counter).addClass('validated');
-				$('#accordion1_panel'+counter).addClass('validated');
+				jQuery('#accordion1_tab'+counter).addClass('validated');
+				jQuery('#accordion1_panel'+counter).addClass('validated');
 			} else {
-				$('#accordion1_tab'+counter).removeClass('validated');
-				$('#accordion1_panel'+counter).removeClass('validated');
+				jQuery('#accordion1_tab'+counter).removeClass('validated');
+				jQuery('#accordion1_panel'+counter).removeClass('validated');
 			}
 		}
 
@@ -46,17 +46,15 @@ $(document).ready(function(){
 	 * Donne la valeur de la progress bar selon le nombre de checbox activé au total
 	 */
 	function progressBarAllEtape() {
-		var co = 1;
-		while (co <= 35) {
-			var counter = co++;
-			var valeur = 0;
-		  	valeur = $('input:checked').length * 100 / $('input').length;
-			$('#barre_etape_all').progressbar({
-				value: valeur
-			});
-			$('.title_progressBar span').remove();
-			$('.title_progressBar').append('<span><span class="pc">'+Math.round(valeur)+'%</span><span class="nb">'+$('input:checked').length+' sur '+$('input[type="checkbox"]').length+'</span></span>');
-		}	
+		var valeur;
+	  	valeur = jQuery('input:checked').length * 100 / $('input[type="checkbox"]').length;
+		jQuery('#barre_etape_all').progressbar({
+			value: valeur
+		});
+		console.log(jQuery('.animated-accordion__header.validated').length)
+		jQuery('.title_progressBar span').remove();
+		jQuery('.title_progressBar').append('<span><span class="pc">'+Math.round(valeur)+'%</span><span class="nb">'+jQuery('input:checked').length+' sur '+jQuery('input[type="checkbox"]').length+' monstres</span><span class="nbEtape">'+jQuery('.animated-accordion__header.validated').length+' étapes sur '+jQuery('.animated-accordion__header').length+'</span></span>');
+		// jQuery('.title_progressBar').after('<p>Vous avez finis '+jQuery('.animated-accordion__header.validated').length+' étapes sur '+jQuery('.animated-accordion__header').length+'.</p>')
 	}
 
 
