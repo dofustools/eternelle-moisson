@@ -1,6 +1,22 @@
 $(document).ready(function(){
 
 	/*
+	 * Cache/Affiche les etapes validées
+	 */
+	jQuery(".bt_hiddenEtape").click(function() {
+		if (jQuery('.bt_hiddenEtape').html() == 'Cacher les étapes terminées') {
+			jQuery('.js-accordion__header.validated').addClass('hidden');	
+			jQuery('.bt_hiddenEtape').html('Afficher les étapes terminées');
+			jQuery('.bt_hiddenEtape').addClass('visible');
+		} else {
+			jQuery('.js-accordion__header.validated').removeClass('hidden');	
+			jQuery('.bt_hiddenEtape').html('Cacher les étapes terminées');
+			jQuery('.bt_hiddenEtape').removeClass('visible');
+		}
+	});
+
+
+	/*
 	 * Supprime les doublons dans un tableau
 	 */
 	function cleanArray(array) {

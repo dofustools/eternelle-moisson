@@ -48,8 +48,8 @@
    ========================================================================== */
    	$color-primary: #ff9f0b;
    	$color-primary-second: #FFA519;
-   	$color-comp: #0063B2;
-   	$color-comp-second: #008DFF;
+   	$color-comp: #014378;
+   	$color-comp-second: #002b4d;
    	$color-green: #8BC34A;
    	$color-green-dark: #6F9C3B;
    	$dark-10: #130b09;
@@ -81,6 +81,10 @@
 	.header,
 	.content_main {
 		max-width: 100%;
+	}
+
+	.hidden {
+		display: none !important;
 	}
 
 	@import 'https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Lato|Roboto|Slabo+27px';
@@ -162,6 +166,21 @@
    	   	.content_main-stats {
    	   		padding: 35px 0px;
    	   	} 
+
+   	   	/* Bouton afficher/cacher etape */
+   	   		.bt_hiddenEtape {
+   	   		    padding: 15px;
+			    border-radius: 3px;
+			    border: 1px solid $dark-30;
+			    background: $dark-10;
+			    margin: 10px 0px;
+			    color: white;
+			    font-size: 1em;
+   	   		}
+   	   		.bt_hiddenEtape.visible {
+   	   			background: $color-comp;
+   	   			border-color: $color-comp-second;
+   	   		}
 
    	   	/* Stats global */
    	   		.title_progressBar {
@@ -273,9 +292,10 @@
 		/* Etape validé */
 			.animated-accordion__header.validated,
 			.animated-accordion__header.validated[aria-expanded="true"] {
-				background: $color-green;
+				background: $color-comp;
+				border-color: $color-comp-second;
 				color: white;	
-			    text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;	
+			    // text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;	
 				.pc {
 					border-color: white;
 				}
