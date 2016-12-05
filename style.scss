@@ -87,6 +87,18 @@
 		display: none !important;
 	}
 
+	a:hover,
+	a:active {
+		opacity: 0.9;
+	}
+	a:visited {
+		opacity: 0.8;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
 	@import 'https://fonts.googleapis.com/css?family=Patrick+Hand+SC|Lato|Roboto|Slabo+27px';
 
 
@@ -180,6 +192,14 @@
    	   		.bt_hiddenEtape.visible {
    	   			background: $color-comp;
    	   			border-color: $color-comp-second;
+   	   		}
+   	   		.bt_hiddenEtape:hover,
+   	   		.bt_hiddenEtape:focus {
+   	   			background: black;
+   	   		}
+   	   		.bt_hiddenEtape.visible:hover,
+   	   		.bt_hiddenEtape.visible:focus {
+   	   			background: $color-comp-second;
    	   		}
 
    	   	/* Stats global */
