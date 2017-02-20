@@ -2,12 +2,21 @@ $(document).ready(function(){
 
 	$.getJSON('etapes.JSON',function(data){
 		// for (var i = 0; i < 36; i++) {
-			console.log(data.etape.length);
+			console.log(data.etape.etape_1.length);
 		// }
 	});
 
 	$.getJSON('etapes.JSON',function(data){
-		for (var i = 0, c = data.etape.length; i < c; i++) {
+		for (var i = 0, c = 36; i < c; i++) {
+			var debut = "data.etape.etape_";
+			var fin = i;
+			var complet = debut+fin;
+		  	console.log(complet);
+
+			var LengthEtape = data.etape.etape_1.length;
+		}
+
+		for (var i = 0, c = LengthEtape; i < c; i++) {
 			$.each( data.etape.etape_1[i], function( key, value ) {
 			  	// console.log( key + ": " + value );
 			});
