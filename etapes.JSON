@@ -1,0 +1,37 @@
+{
+	"etape": {
+		"etape_1": [
+			{"monstre":"Souris Grise", "lieu":"Cryptes"}, 
+			{"monstre":"Moskito", "lieu":"Amakna, Astrub, Pandala"}, 
+			{"monstre":"Arakne", "lieu":"Amakna, Astrub, Pandala"}, 
+			{"monstre":"Boufton Blanc - Boufton Noir", "lieu":"Amakna, Astrub, Tainéla"}, 
+			{"monstre":"Tofu Maléfique", "lieu":"Cimetières"},
+			{"monstre":"Arakne Malade", "lieu":"Souterrains d'Astrub"},
+			{"monstre":"Piou Bleu - Piou Jaune - Piou Rouge - Piou Vert - Piou Violet - Piou Rose", "lieu":"Astrub, Bonta, Sufokia"},
+			{"monstre":"Flammèche Air - Flammèche Eau - Flammèche Feu - Flammèche Terre", "lieu":"Plaine des Scarafeuilles, Nids des Kwaks"},
+			{"monstre":"Larve Bleue", "lieu":"Un peu partout"},
+			{"monstre":"Crabe", "lieu":"Zone du Port de Madrestam, Rivages de Sufokia"},
+			{"monstre":"Tofu", "lieu":"Amakna, Astrub"}
+		],
+
+		"etape_2": [
+	  		{"monstre":"Tofu Malade", "lieu":"(Souterrains d'Astrub)"},
+			{"monstre":"Champ Champ", "lieu":"(Amakna, Astrub, Champs de Cania, Tainéla)"},
+			{"monstre":"Pissenlit Diabolique", "lieu":"(Amakna, Astrub, Champs de Cania, Tainéla)"},
+			{"monstre":"Arakne Agressive", "lieu":"(Forêt des Abraknydes, Amakna)"},
+			{"monstre":"Bandit Manchot", "lieu":"(Astrub, Passage vers Brâkmar)"},
+			{"monstre":"Rose Démoniaque", "lieu":"(Amakna, Astrub, Champs de Cania, Tainéla)"},
+			{"monstre":"Gelée Bleue - Gelée Menthe", "lieu":"(Péninsule des Gelées, Gelaxième Dimension)"},
+			{"monstre":"Kwoan", "lieu":"(Cimetière d'Amakna)"},
+			{"monstre":"Larve Verte", "lieu":"(Un peu partout)"},
+			{"monstre":"Bouftou", "lieu":"(Amakna, Astrub, Tainéla)"},
+			{"monstre":"Kolérat", "lieu":"(Lande de Sidimote)"},
+			{"monstre":"Larve Orange", "lieu":"(Un peu partout)"},
+			{"monstre":"Boulanger Sombre", "lieu":"(Façade de Brâkmar, Territoire des Bandits)"},
+			{"monstre":"Black Tiwabbit - Tiwabbit - Tiwabbit Kiafin", "lieu":"(Île des Wabbits)"},
+			{"monstre":"Tournesol Sauvage", "lieu":"(Amakna, Astrub, Champs de Cania)"},
+			{"monstre":"Bandit du clan des Roublards", "lieu":"(Territoire des Bandits)"},
+			{"monstre":"Gobelin", "lieu":"([4, -12], Campement des Bworks, Village dévasté de Gisgoul"}
+	  ]
+	}
+}

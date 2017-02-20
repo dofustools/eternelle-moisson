@@ -1,5 +1,55 @@
 $(document).ready(function(){
 
+	$.getJSON('etapes.JSON',function(data){
+		// for (var i = 0; i < 36; i++) {
+			console.log(data.etape.length);
+		// }
+	});
+
+	$.getJSON('etapes.JSON',function(data){
+		for (var i = 0, c = data.etape.length; i < c; i++) {
+			$.each( data.etape.etape_1[i], function( key, value ) {
+			  	// console.log( key + ": " + value );
+			});
+		}
+	});
+
+	/*
+	 * Ajoute autant de checkbox que de monstre
+	 */
+	// function etape_check(monstresId, monstresInfo, numEtape) {
+	// 	for (var i = 0, c = monstresId.length; i < c; i++) {
+	// 	    $('#etape_'+numEtape).append( 
+	// 	    	'<li>'
+	// 	    		+'<input type="checkbox" name="'+monstresId[i]+'" id="'+monstresId[i]+'" />'
+	//     	 		+'<label for="'+monstresId[i]+'">'+monstresInfo[i]+'</label>'+
+ //    	 		'</li>' 
+	//  		);
+	// 	}	
+	// }
+	// etape_check(monstresId, monstresInfo, numEtape);
+
+
+	/*
+	 * Créer autant de bloc accordion qu'il y a d'étape
+	 */
+	function blocAccordion(nbEtapes) {
+		for (var i = 1, c = nbEtapes; i < c; i++) {
+			$('.js-accordion').append(
+				'<h2 class="js-accordion__header">Etape '+i+'</h2>'+
+				'<div class="js-accordion__panel">'+
+					'<div id="barre_etape_'+i+'" aria-hidden="true"></div>'+
+					'<ul id="etape_'+i+'">'+
+					'</ul>' +
+				'</div>'
+			)	
+		}
+	}
+	blocAccordion(36);
+
+
+
+
 	/*
 	 * Cache/Affiche les etapes validées
 	 */
@@ -67,7 +117,6 @@ $(document).ready(function(){
 		jQuery('#barre_etape_all').progressbar({
 			value: valeur
 		});
-		console.log(jQuery('.animated-accordion__header.validated').length)
 		jQuery('.title_progressBar span').remove();
 		jQuery('.title_progressBar').append('<span><span class="pc">'+Math.round(valeur)+'%</span><span class="nb">'+jQuery('input:checked').length+' sur '+jQuery('input[type="checkbox"]').length+' monstres</span><span class="nbEtape">'+jQuery('.animated-accordion__header.validated').length+' étapes sur '+jQuery('.animated-accordion__header').length+'</span></span>');
 		// jQuery('.title_progressBar').after('<p>Vous avez finis '+jQuery('.animated-accordion__header.validated').length+' étapes sur '+jQuery('.animated-accordion__header').length+'.</p>')

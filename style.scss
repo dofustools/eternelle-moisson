@@ -71,7 +71,7 @@
 	html {
 	    font-family: 'Lato', sans-serif;
 	}
-	html, body {
+	body {
 		background: $light-grey;
 	}
 	h1,h2,h3,h4,h5,h6,p {
@@ -141,8 +141,12 @@
     		flex-wrap: wrap;
    	   	}
    	   	.content_intro {
-			background: url(sources/bg.jpg) no-repeat center -110px $dark-20;
+			background: url(sources/bg.jpg) no-repeat center 0px $dark-20;
+			// background-attachment: fixed;
+			background-size: cover;
 			color: white;
+			position: relative;
+			overflow: hidden;
 	   	   	article {
 	   		    background: rgba(55,52,52,0.35) url(sources/stripes.png);
 	   	   		padding: 75px 20%;
