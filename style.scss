@@ -398,13 +398,18 @@
 		  left: -9999px;
 		}
 		 
-		/* on prépare le label */
+		.img-bestiaire {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 15px;
+		}
 		[type="checkbox"]:not(:checked) + label,
 		[type="checkbox"]:checked + label {
-			display: block;
-		  position: relative; /* permet de positionner les pseudo-éléments */
-		  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
-		  cursor: pointer;    /* affiche un curseur adapté */
+			display: inline-block;
+			vertical-align: middle;
+			position: relative; /* permet de positionner les pseudo-éléments */
+			padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
+			cursor: pointer;    /* affiche un curseur adapté */
 		}
 
 		/* Aspect des checkboxes */

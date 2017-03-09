@@ -1,63 +1,33 @@
+/*
+ * Créer autant de bloc accordion qu'il y a d'étape
+ */
+for (var i = 1, c = 36; i < c; i++) {
+	$('.js-accordion').append(
+		'<h2 class="js-accordion__header">Etape '+i+'</h2>'+
+		'<div class="js-accordion__panel">'+
+			'<div id="barre_etape_'+i+'" aria-hidden="true"></div>'+
+			'<ul id="etape_'+i+'">'+
+			'</ul>' +
+		'</div>'
+	)	
+}
+
+$.getJSON('etapes.JSON',function(data){
+	$.each( data.etape, function( key, value ) {
+	  	for (var i = 0, c = value.length; i < c; i++) {
+	  		$('#'+key).append( 
+		    	'<li>'
+		    		+'<img class="img-bestiaire" src="'+ value[i].imgBestiaire +'" alt>'
+		    		+'<input type="checkbox" name="'+key+'_id'+i+'" id="'+key+'_id'+i+'" />'
+	    	 		+'<label for="'+key+'_id'+i+'">'+value[i].monstre+' '+value[i].lieu+'</label>'+
+    	 		'</li>' 
+	 		);
+	  	}
+	});
+});
+
+
 $(document).ready(function(){
-
-	$.getJSON('etapes.JSON',function(data){
-		// for (var i = 0; i < 36; i++) {
-			console.log(data.etape.etape_1.length);
-		// }
-	});
-
-	$.getJSON('etapes.JSON',function(data){
-		for (var i = 0, c = 36; i < c; i++) {
-			var debut = "data.etape.etape_";
-			var fin = i;
-			var complet = debut+fin;
-		  	console.log(complet);
-
-			var LengthEtape = data.etape.etape_1.length;
-		}
-
-		for (var i = 0, c = LengthEtape; i < c; i++) {
-			$.each( data.etape.etape_1[i], function( key, value ) {
-			  	// console.log( key + ": " + value );
-			});
-		}
-	});
-
-	/*
-	 * Ajoute autant de checkbox que de monstre
-	 */
-	// function etape_check(monstresId, monstresInfo, numEtape) {
-	// 	for (var i = 0, c = monstresId.length; i < c; i++) {
-	// 	    $('#etape_'+numEtape).append( 
-	// 	    	'<li>'
-	// 	    		+'<input type="checkbox" name="'+monstresId[i]+'" id="'+monstresId[i]+'" />'
-	//     	 		+'<label for="'+monstresId[i]+'">'+monstresInfo[i]+'</label>'+
- //    	 		'</li>' 
-	//  		);
-	// 	}	
-	// }
-	// etape_check(monstresId, monstresInfo, numEtape);
-
-
-	/*
-	 * Créer autant de bloc accordion qu'il y a d'étape
-	 */
-	function blocAccordion(nbEtapes) {
-		for (var i = 1, c = nbEtapes; i < c; i++) {
-			$('.js-accordion').append(
-				'<h2 class="js-accordion__header">Etape '+i+'</h2>'+
-				'<div class="js-accordion__panel">'+
-					'<div id="barre_etape_'+i+'" aria-hidden="true"></div>'+
-					'<ul id="etape_'+i+'">'+
-					'</ul>' +
-				'</div>'
-			)	
-		}
-	}
-	blocAccordion(36);
-
-
-
 
 	/*
 	 * Cache/Affiche les etapes validées
