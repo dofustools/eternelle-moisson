@@ -183,6 +183,15 @@
    	   		padding: 35px 0px;
    	   	} 
 
+   	   	/* Accordeon */
+   	   		.checkMonstre {
+   	   			font-weight: bold;
+   	   		}
+   	   		.checkLieu {
+   	   			font-style: italic;
+   	   			display: block;
+   	   		}
+
    	   	/* Bouton afficher/cacher etape */
    	   		.bt_hiddenEtape {
    	   		    padding: 15px;
@@ -360,6 +369,8 @@
 			}
 			.animated-accordion__panel li {
 				margin: 10px 0px;
+				border-bottom: 1px solid #dadada;
+				padding-bottom: 10px;
 			}
 			/* This is the hidden state */
 			[aria-hidden=true].animated-accordion__panel {

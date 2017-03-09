@@ -19,7 +19,7 @@ $.getJSON('etapes.JSON',function(data){
 		    	'<li>'
 		    		+'<img class="img-bestiaire" src="'+ value[i].imgBestiaire +'" alt>'
 		    		+'<input type="checkbox" name="'+key+'_id'+i+'" id="'+key+'_id'+i+'" />'
-	    	 		+'<label for="'+key+'_id'+i+'">'+value[i].monstre+' '+value[i].lieu+'</label>'+
+	    	 		+'<label for="'+key+'_id'+i+'"><span class="checkMonstre">'+value[i].monstre+'</span> <span class="checkLieu">'+value[i].lieu+'</span></label>'+
     	 		'</li>' 
 	 		);
 	  	}
