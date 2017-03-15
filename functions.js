@@ -1,32 +1,3 @@
-/*
- * Créer autant de bloc accordion qu'il y a d'étape
- */
-for (var i = 1, c = 36; i < c; i++) {
-	$('.js-accordion').append(
-		'<h2 class="js-accordion__header">Etape '+i+'</h2>'+
-		'<div class="js-accordion__panel">'+
-			'<div id="barre_etape_'+i+'" aria-hidden="true"></div>'+
-			'<ul id="etape_'+i+'">'+
-			'</ul>' +
-		'</div>'
-	)	
-}
-
-$.getJSON('etapes.JSON',function(data){
-	$.each( data.etape, function( key, value ) {
-	  	for (var i = 0, c = value.length; i < c; i++) {
-	  		$('#'+key).append( 
-		    	'<li>'
-		    		+'<img class="img-bestiaire" src="'+ value[i].imgBestiaire +'" alt>'
-		    		+'<input type="checkbox" name="'+key+'_id'+i+'" id="'+key+'_id'+i+'" />'
-	    	 		+'<label for="'+key+'_id'+i+'"><span class="checkMonstre">'+value[i].monstre+'</span> <span class="checkLieu">'+value[i].lieu+'</span></label>'+
-    	 		'</li>' 
-	 		);
-	  	}
-	});
-});
-
-
 $(document).ready(function(){
 
 	/*
@@ -75,7 +46,6 @@ $(document).ready(function(){
 			});
 			jQuery('#accordion1_tab'+counter+' span').remove();
 			jQuery('#accordion1_tab'+counter).append('<span><span class="pc">'+Math.round(valeur)+'%</span> <span class="nb">'+jQuery('#etape_'+counter+' '+'input:checked').length+' sur '+jQuery('#etape_'+counter+' '+'input[type="checkbox"]').length+'</span></span>');
-
 			if (Math.round(valeur) == 100) {
 				jQuery('#accordion1_tab'+counter).addClass('validated');
 				jQuery('#accordion1_panel'+counter).addClass('validated');
@@ -84,7 +54,6 @@ $(document).ready(function(){
 				jQuery('#accordion1_panel'+counter).removeClass('validated');
 			}
 		}
-
 	}
 
 	/*
@@ -144,5 +113,3 @@ $(document).ready(function(){
 	progressBarAllEtape();
 
 });
-
-
