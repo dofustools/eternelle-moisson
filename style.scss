@@ -417,6 +417,7 @@
 		[type="checkbox"]:not(:checked) + label,
 		[type="checkbox"]:checked + label {
 			display: inline-block;
+			max-width: calc(100% - 67px);
 			vertical-align: middle;
 			position: relative; /* permet de positionner les pseudo-éléments */
 			padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
@@ -478,5 +479,8 @@
 	}
 	.content_intro article div {
 		width: 100%;
+	}
+	.header_logo h1 {
+		text-align: center;
 	}
 }
