@@ -142,8 +142,9 @@ $(function(){
 		function doneTyping () {
 			$(".highlight").removeClass('highlight')
 			var text = $('#recherche').val();
+			var panel;
 			$($('.checkMonstre:icontains("'+text+'")').get().reverse()).each(function(){
-				var panel = $(this).parents(".js-accordion__panel")
+				panel = $(this).parents(".js-accordion__panel")
 
 				if(panel.attr('aria-hidden')=='true'){
 					var panel_id = panel.attr("id");
@@ -153,6 +154,9 @@ $(function(){
 
 				$(this).addClass("highlight");
 			})
+			$([document.documentElement, document.body]).animate({
+				scrollTop: panel.offset().top
+			}, 2000);
 		}
 	}
 
