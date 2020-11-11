@@ -142,9 +142,10 @@ $(function(){
 		function doneTyping () {
 			$(".highlight").removeClass('highlight')
 			var text = $('#recherche').val();
-			var panel;
+			var item;
 			$($('.checkMonstre:icontains("'+text+'")').get().reverse()).each(function(){
-				panel = $(this).parents(".js-accordion__panel")
+				item = $(this);
+				varpanel = $(this).parents(".js-accordion__panel")
 
 				if(panel.attr('aria-hidden')=='true'){
 					var panel_id = panel.attr("id");
@@ -155,7 +156,7 @@ $(function(){
 				$(this).addClass("highlight");
 			})
 			$([document.documentElement, document.body]).animate({
-				scrollTop: panel.offset().top
+				scrollTop: item.offset().top
 			}, 2000);
 		}
 	}
