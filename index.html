@@ -8,7 +8,7 @@
 		<link type="image/x-icon" rel="shortcut icon" href="sources/favicon-32x32.png">
 
 		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
-		<link rel="stylesheet" href="style.min.css">
+		<link rel="stylesheet" href="style/style.css">
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,6 +19,7 @@
 		  ga('create', 'UA-54733863-3', 'auto');
 		  ga('send', 'pageview');
 		</script>
+
 	</head>
 	<body>
 		<header class="header" role="banner">
@@ -34,14 +35,14 @@
 			</nav>
 		</header>
 
-		<div class="content" role="main">	
+		<div class="content" role="main">
 			<section class="content_intro">
 				<article>
 					<div>
 						<h1>L'ÉTERNELLE MOISSON</h1>
-						<p> Si vous n'avez pas peur de voyager au quatre coin du monde des Douze et d'affronter les plus terribles créatures le peuplant, la quête de l'éternelle moisson est faite pour vous ! Elle se lance auprès d'Otomaï, qui se trouve dans le Tronc de l'arbre Hakam en [-55,15] et vous permez d'obtenir le Dofus Ocre. Pour débuter la quête, vous devez être au minimum niveau 40 et possédez le sort capture d'âme (obtenu à la fin du donjon Bulbes)</p>	
+						<p> Si vous n'avez pas peur de voyager au quatre coin du monde des Douze et d'affronter les plus terribles créatures le peuplant, la quête de l'éternelle moisson est faite pour vous ! Elle se lance auprès d'Otomaï, qui se trouve dans le Tronc de l'arbre Hakam en [-55,15] et vous permez d'obtenir le Dofus Ocre. Pour débuter la quête, vous devez être au minimum niveau 40 et possédez le sort capture d'âme (obtenu à la fin du donjon Bulbes)</p>
 					</div>
-				</article>	
+				</article>
 			</section>
 
 			<section class="content_main">
@@ -49,19 +50,23 @@
 					<article class="mod-block mod-block-info">
 						<h2>Traitement de vos données</h2>
 						<p>Pour utilisez ce site, nul besoin d'inscription, vos données sont stocker localement dans votre navigateur. Vous retrouverez donc l'état de votre progression à chaque visite sur le site.</p>
-					</article>	
+					</article>
 				</aside>
 
 				<aside class="content_main-stats">
 					<h3 class="title_progressBar">Progression global :</h3>
-					<div id="barre_etape_all" aria-hidden="true"></div>	
+					<div id="barre_etape_all" aria-hidden="true"></div>
 				</aside>
 
 				<button class="bt_hiddenEtape">Cacher les étapes terminées</button>
-				
+
 				<div class="content_main-accordion js-accordion" data-accordion-prefix-classes="animated-accordion">
 				</div>
 			</section>
+
+			<div id="loading_data">
+				Vos données sont en train d'être chargées depuis votre navigateur, veuillez patienter.
+			</div>
 		</div>
 
 
@@ -72,13 +77,15 @@
 			</ul>
 		</footer>
 
-		<!-- Script -->
-			<script src="bower_components/jquery/dist/jquery.js"></script>
-			<script src="bower_components/jquery-ui/jquery-ui.js"></script>
-			<script src="creataccordion.js"></script>
-			<script src="bower_components/jquery-accessible-accordion-aria/jquery-accessible-accordion-aria-legacy-1.2.0.js"></script>
-			<script src="functions.js"></script>
-		<!--  -->
 
+
+		<!-- Script -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquery-ui/jquery-ui.js"></script>
+<!--		<script src="bower_components/jquery-accessible-accordion-aria/jquery-accessible-accordion-aria-legacy-1.2.0.js"></script>-->
+
+		<script src="functions.js"></script>
+
+		<!--  -->
 	</body>
 </html>
