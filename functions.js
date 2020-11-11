@@ -145,11 +145,11 @@ $(function(){
 			var item;
 			$($('.checkMonstre:icontains("'+text+'")').get().reverse()).each(function(){
 				item = $(this);
-				varpanel = $(this).parents(".js-accordion__panel")
+				let panel = $(this).parents(".js-accordion__panel");
 
 				if(panel.attr('aria-hidden')=='true'){
-					var panel_id = panel.attr("id");
-					var button_id = "accordion1_tab" + panel_id.slice(16)
+					let panel_id = panel.attr("id");
+					let button_id = "accordion1_tab" + panel_id.slice(16)
 					$('#'+button_id).click();
 				}
 
