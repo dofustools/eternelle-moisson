@@ -96,12 +96,42 @@ $(function(){
 		$('#loading_data').css('visibility', 'hidden');
 		$('html').css("cursor", "default");
 
+
+		/*
+         * Cache/Affiche les etapes validées
+         */
+		$(".bt_hiddenEtape").click(function() {
+			if ($('.bt_hiddenEtape').html() == 'Cacher les étapes terminées') {
+				$('.js-accordion__header.validated').addClass('hidden');
+				$('.bt_hiddenEtape').html('Afficher les étapes terminées');
+				$('.bt_hiddenEtape').addClass('visible');
+			} else {
+				$('.js-accordion__header.validated').removeClass('hidden');
+				$('.bt_hiddenEtape').html('Cacher les étapes terminées');
+				$('.bt_hiddenEtape').removeClass('visible');
+			}
+		});
+
+		$('.bt_ouvrirTout').click(function(){
+			var tabs = $('.js-accordion__header').filter('[aria-expanded=false]').get()
+			$(tabs.reverse()).each(function(){
+				$(this).click()
+			})
+		});
+
+		$('.bt_fermerTout').click(function(){
+			var tabs = $('.js-accordion__header').filter('[aria-expanded=true]').get()
+			$(tabs.reverse()).each(function(){
+				$(this).click()
+			})
+		});
+
 		//setup before functions
 		var typingTimer;                //timer identifier
-		var doneTypingInterval = 1800;  //time in ms (5 seconds)
+		var doneTypingInterval = 1500;  //time in ms (5 seconds)
 
 		//on keyup, start the countdown
-		$('#recherche').keyup(function(){
+		$('#recherche').on("keyup", function(){
 			clearTimeout(typingTimer);
 			if ($('#recherche').val()) {
 				typingTimer = setTimeout(doneTyping, doneTypingInterval);

@@ -202,25 +202,25 @@
    	   		}
 
    	   	/* Bouton afficher/cacher etape */
-   	   		.bt_hiddenEtape {
-   	   		    padding: 15px;
-			    border-radius: 3px;
-			    border: 1px solid $dark-30;
-			    background: $dark-10;
-			    margin: 10px 0px;
-			    color: white;
-			    font-size: 1em;
-   	   		}
-   	   		.bt_hiddenEtape.visible {
+			.btn_header{
+				padding: 15px;
+				border-radius: 3px;
+				border: 1px solid $dark-30;
+				background: $dark-10;
+				margin: 10px 0px;
+				color: white;
+				font-size: 1em;
+			}
+   	   		.btn_header.visible {
    	   			background: $color-comp;
    	   			border-color: $color-comp-second;
    	   		}
-   	   		.bt_hiddenEtape:hover,
-   	   		.bt_hiddenEtape:focus {
+   	   		.btn_header:hover,
+   	   		.btn_header:focus {
    	   			background: black;
    	   		}
-   	   		.bt_hiddenEtape.visible:hover,
-   	   		.bt_hiddenEtape.visible:focus {
+   	   		.btn_header.visible:hover,
+   	   		.btn_header.visible:focus {
    	   			background: $color-comp-second;
    	   		}
 
