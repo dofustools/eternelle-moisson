@@ -53,6 +53,9 @@
 					</article>
 				</aside>
 
+				<label for="recherche">Recherche par nom : </label>
+				<input type="text" id="recherche" name="recherche" placeholder="Rechercher...">
+
 				<aside class="content_main-stats">
 					<h3 class="title_progressBar">Progression global :</h3>
 					<div id="barre_etape_all" aria-hidden="true"></div>
@@ -60,7 +63,7 @@
 
 				<button class="bt_hiddenEtape">Cacher les étapes terminées</button>
 
-				<div class="content_main-accordion js-accordion" data-accordion-prefix-classes="animated-accordion">
+				<div class="content_main-accordion js-accordion" data-accordion-prefix-classes="animated-accordion" aria-multiselectable="true" >
 				</div>
 			</section>
 

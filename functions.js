@@ -1,20 +1,5 @@
 $(function(){
-
-	/*
-	 * Cache/Affiche les etapes validées
-	 */
-	$(".bt_hiddenEtape").click(function() {
-		if ($('.bt_hiddenEtape').html() == 'Cacher les étapes terminées') {
-			$('.js-accordion__header.validated').addClass('hidden');
-			$('.bt_hiddenEtape').html('Afficher les étapes terminées');
-			$('.bt_hiddenEtape').addClass('visible');
-		} else {
-			$('.js-accordion__header.validated').removeClass('hidden');
-			$('.bt_hiddenEtape').html('Cacher les étapes terminées');
-			$('.bt_hiddenEtape').removeClass('visible');
-		}
-	});
-
+	var checkedArray = [];
 
 	/*
 	 * Supprime les doublons dans un tableau
@@ -107,11 +92,39 @@ $(function(){
 		}
 	}
 
+	function onInit(){
+		$('#loading_data').css('visibility', 'hidden');
+		$('html').css("cursor", "default");
 
-	var checkedArray = [];
+		//setup before functions
+		var typingTimer;                //timer identifier
+		var doneTypingInterval = 1800;  //time in ms (5 seconds)
 
+		//on keyup, start the countdown
+		$('#recherche').keyup(function(){
+			clearTimeout(typingTimer);
+			if ($('#recherche').val()) {
+				typingTimer = setTimeout(doneTyping, doneTypingInterval);
+			}
+		});
 
+		//user is "finished typing," do something
+		function doneTyping () {
+			$(".highlight").removeClass('highlight')
+			var text = $('#recherche').val();
+			$($('.checkMonstre:icontains("'+text+'")').get().reverse()).each(function(){
+				var panel = $(this).parents(".js-accordion__panel")
 
+				if(panel.attr('aria-hidden')=='true'){
+					var panel_id = panel.attr("id");
+					var button_id = "accordion1_tab" + panel_id.slice(16)
+					$('#'+button_id).click();
+				}
+
+				$(this).addClass("highlight");
+			})
+		}
+	}
 
 
 	/* Chargement des données */
@@ -166,6 +179,15 @@ $(function(){
 	$('html').css('cursor', 'wait');
 	$('#loading_data').css('visibility', 'visible');
 
+
+	$.expr[':'].icontains = function(el, i, m) { // checks for substring (case insensitive)
+		var search = m[3];
+		if (!search) return false;
+
+		var pattern = new RegExp(search, 'i');
+		return pattern.test($(el).text());
+	};
+
 	/*
 	* Créer autant de bloc accordion qu'il y a d'étape
  	*/
@@ -201,8 +223,8 @@ $(function(){
 				progressBarEtape();
 				progressBarAllEtape();
 
-				$('#loading_data').css('visibility', 'hidden');
-				$('html').css("cursor", "default");
+				onInit();
+
 			}, 500);
 		});
 	});

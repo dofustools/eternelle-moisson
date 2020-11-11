@@ -191,6 +191,10 @@
    	   	/* Accordeon */
    	   		.checkMonstre {
    	   			font-weight: bold;
+				&.highlight{
+					font-weight: bold;
+					background-color:#FFFF00;
+				}
    	   		}
    	   		.checkLieu {
    	   			font-style: italic;
