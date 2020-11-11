@@ -8,7 +8,7 @@ Cet outil est destiné à la gestion de la quête Dofus de l’Éternelle moisso
 De nombreuses évolutions sont à venir (système de recherche, philtre, ...).
 
 ## Utilisation
-L'outil est accessible via cette url : <https://dofustools.github.io/eternelle-moisson/>
+L'outil est accessible via cette url : <https://YohannBethoule.github.io/eternelle-moisson/>
 
 Les informations sont stockées en local sur le navigateur, nul besoin d'inscription.
 
