@@ -146,14 +146,14 @@
     		flex-wrap: wrap;
    	   	}
    	   	.content_intro {
-			background: url(sources/bg.jpg) no-repeat center 0px $dark-20;
+			background: url(../sources/bg.jpg) no-repeat center 0px $dark-20;
 			// background-attachment: fixed;
 			background-size: cover;
 			color: white;
 			position: relative;
 			overflow: hidden;
 	   	   	article {
-	   		    background: rgba(55,52,52,0.35) url(sources/stripes.png);
+	   		    background: rgba(55,52,52,0.35) url(../sources/stripes.png);
 	   	   		padding: 75px 20%;
 		   	   	div {
 		   	   		background: rgba(19, 11, 9, 0.8);
