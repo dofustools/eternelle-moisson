@@ -1,5 +1,5 @@
 /* ==========================================================================
-   http://meyerweb.com/eric/tools/css/reset/ 
+   http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
@@ -12,17 +12,18 @@
 	dl, dt, dd, ol, ul, li,
 	fieldset, form, label, legend,
 	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
 	menu, nav, output, ruby, section, summary,
 	time, mark, audio, video {
 		margin: 0;
 		padding: 0;
 		border: 0;
 		vertical-align: baseline;
+		box-sizing: border-box;
 	}
 	/* HTML5 display-role reset for older browsers */
-	article, aside, details, figcaption, figure, 
+	article, aside, details, figcaption, figure,
 	footer, header, hgroup, menu, nav, section {
 		display: block;
 	}
@@ -56,7 +57,7 @@
    	$dark-20: #4e4332;
    	$dark-30: #9a8667;
    	$light-grey: #f2F5F7;
-   	
+
    	$br: 3px;
 
 
@@ -66,7 +67,11 @@
    Global
    ========================================================================== */
 	* {
-	    box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		vertical-align: baseline;
+		box-sizing: border-box;
 	}
 	html {
 	    font-family: 'Lato', sans-serif;
@@ -181,11 +186,15 @@
    	   	.content_main-data,
    	   	.content_main-stats {
    	   		padding: 35px 0px;
-   	   	} 
+   	   	}
 
    	   	/* Accordeon */
    	   		.checkMonstre {
    	   			font-weight: bold;
+				&.highlight{
+					font-weight: bold;
+					background-color:#FFFF00;
+				}
    	   		}
    	   		.checkLieu {
    	   			font-style: italic;
@@ -193,25 +202,25 @@
    	   		}
 
    	   	/* Bouton afficher/cacher etape */
-   	   		.bt_hiddenEtape {
-   	   		    padding: 15px;
-			    border-radius: 3px;
-			    border: 1px solid $dark-30;
-			    background: $dark-10;
-			    margin: 10px 0px;
-			    color: white;
-			    font-size: 1em;
-   	   		}
-   	   		.bt_hiddenEtape.visible {
+			.btn_header{
+				padding: 15px;
+				border-radius: 3px;
+				border: 1px solid $dark-30;
+				background: $dark-10;
+				margin: 10px 0px;
+				color: white;
+				font-size: 1em;
+			}
+   	   		.btn_header.visible {
    	   			background: $color-comp;
    	   			border-color: $color-comp-second;
    	   		}
-   	   		.bt_hiddenEtape:hover,
-   	   		.bt_hiddenEtape:focus {
+   	   		.btn_header:hover,
+   	   		.btn_header:focus {
    	   			background: black;
    	   		}
-   	   		.bt_hiddenEtape.visible:hover,
-   	   		.bt_hiddenEtape.visible:focus {
+   	   		.btn_header.visible:hover,
+   	   		.btn_header.visible:focus {
    	   			background: $color-comp-second;
    	   		}
 
@@ -224,6 +233,32 @@
    	   				border-right: 1px solid $color-primary;
    	   			}
    	   		}
+
+
+	/* Loading data
+		  ========================================================================== */
+	#loading_data{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1000;
+		width: 40%;
+		height: 10%;
+		position: fixed;
+		margin: 5% auto;
+		top: 40%;
+		left: 0;
+		right: 0;
+		border: 1px black solid;
+		border-radius: 20px;
+		padding: 5rem;
+		background: whitesmoke;
+		font-size: 1.3rem;
+		text-align: center;
+		visibility: hidden;
+	}
+
+
 
    	/* Footer
    	   ========================================================================== */
@@ -273,18 +308,18 @@
    	   		.mod-block-info {
 				border: 1px solid $color-comp;
 				h2 {
-					background: $color-comp;	
+					background: $color-comp;
 				}
    	   		}
 
    	/* Accordeon
    	   ========================================================================== */
    	   	.animated-accordion h3 {
-			font-size: 1.2rem;	
+			font-size: 1.2rem;
    	   	}
 
 	   	.animated-accordion__header {
-			font-size: 1.4rem;	
+			font-size: 1.4rem;
 			width: 100%;
 			text-align: left;
 			margin: 10px 0px;
@@ -297,19 +332,19 @@
    			    border-right: 1px solid $color-primary;
     			padding: 5px 10px;
 	   		}
-	   	} 
+	   	}
    	   	.animated-accordion__header,
    	   	.animated-accordion__header[aria-expanded="true"],
    	   	.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
 			background: white;
-			color: $dark-10;  	   		
+			color: $dark-10;
    	   	}
    	   	.animated-accordion__header,
    	   	.animated-accordion__header[aria-expanded="true"] + .animated-accordion__panel {
 		    border: 1px solid $dark-30;
 			padding: 20px;
    	   	}
-		.animated-accordion__header[aria-expanded="true"] {	
+		.animated-accordion__header[aria-expanded="true"] {
 			/* border-bottom: 0px; */
 			margin-bottom: 0px;
 		}
@@ -327,8 +362,8 @@
 			.animated-accordion__header.validated[aria-expanded="true"] {
 				background: $color-comp;
 				border-color: $color-comp-second;
-				color: white;	
-			    // text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;	
+				color: white;
+			    // text-shadow: 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black, 0px 0px 2px black;
 				.pc {
 					border-color: white;
 				}
@@ -408,7 +443,7 @@
 		  position: absolute;
 		  left: -9999px;
 		}
-		 
+
 		.img-bestiaire {
 			display: inline-block;
 			vertical-align: middle;
@@ -430,7 +465,7 @@
 		[type="checkbox"]:checked + label:before {
 		  content: '';
 		  position: absolute;
-		  left:0; 
+		  left:0;
 		  top: 1px;
 		  width: 17px; height: 17px; /* dim. de la case */
 		  border: 1px solid $color-primary;
